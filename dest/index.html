@@ -1,0 +1,540 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link href="./style.css" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+ <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css" rel="stylesheet"/> -->
+
+</head>
+<body>
+  <nav class="flex items-center justify-between bg-gray-50 px-6 py-4 shadow-md">
+    <!-- Brand -->
+    <a href="#" id="brand" class="flex items-center gap-2 text-gray-800 hover:text-indigo-600 transition">
+      <i class="fa-solid fa-house text-indigo-500 text-xl"></i>
+      <span class="text-xl font-semibold tracking-wide">ToDesktop</span>
+    </a>
+  
+    <!-- Desktop Links -->
+    <div class="hidden lg:flex items-center gap-8 text-lg font-medium text-gray-700">
+      <a href="#" class="hover:text-indigo-600 transition">Pricing</a>
+      <a href="#" class="hover:text-indigo-600 transition">Docs</a>
+      <a href="#" class="hover:text-indigo-600 transition">Changelog</a>
+      <a href="#" class="hover:text-indigo-600 transition">Blog</a>
+      <a href="#" class="hover:text-indigo-600 transition">Login</a>
+    </div>
+  
+    <!-- CTA Button (Desktop) -->
+    <button class="hidden md:flex items-center gap-2 bg-amber-400 hover:bg-amber-500 text-white px-5 py-2 rounded-xl text-lg transition">
+      <i class="fa-solid fa-atom"></i>
+      <span>Electron Devs</span>
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+  
+    <!-- Hamburger Icon -->
+    <button onclick="handleMenu()" class="block md:hidden text-gray-600 text-2xl">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  
+    <!-- Mobile Menu -->
+    <div id="nav-dialog" class="fixed inset-0 z-50 bg-white p-6 hidden flex-col gap-6 animate-fadeIn">
+      <!-- Top Section -->
+      <div class="flex justify-between items-center">
+        <a href="#" class="flex items-center gap-2 text-xl font-semibold text-gray-800">
+          <i class="fa-solid fa-house text-indigo-500"></i>ToDesktop
+        </a>
+        <button onclick="handleMenu()" class="text-gray-600 text-2xl">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+  
+      <!-- Mobile Links -->
+      <div class="flex flex-col gap-4 mt-6 text-lg font-medium text-gray-700">
+        <a href="#" class="hover:text-indigo-600 transition">Pricing</a>
+        <a href="#" class="hover:text-indigo-600 transition">Docs</a>
+        <a href="#" class="hover:text-indigo-600 transition">Changelog</a>
+        <a href="#" class="hover:text-indigo-600 transition">Blog</a>
+        <a href="#" class="hover:text-indigo-600 transition">Login</a>
+      </div>
+  
+      <!-- CTA (Mobile) -->
+      <div class="mt-6 border-t pt-4">
+        <button class="w-full flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-500 text-white px-5 py-3 rounded-xl text-lg transition">
+          <i class="fa-solid fa-atom"></i>
+          <span>Electron Devs</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+  
+   <!-- nav bar end here -->
+    <main>
+      <!-- hero section -->
+      <div id="hero-section" class="min-h-screen bg-gradient-to-b from-pink-50 via-purple-50 to-neutral-50">
+        <div id="div-container" class="max-w-4xl mx-auto px-6 py-24 sm:py-28 md:py-32 flex flex-col items-center text-center">
+      
+          <!-- Version Text -->
+          <div id="version-text"
+               class="text-amber-800 border border-amber-300 shadow-md hover:shadow-xl hover:shadow-amber-600 hover:bg-amber-100 hover:scale-105 
+                      transition-all duration-300 ease-in-out px-6 py-4 rounded-xl cursor-pointer w-full max-w-xl">
+            <span class="text-amber-500 font-semibold">v0.21.1:</span> Find-in-Page Bugs fixes
+          </div>
+
+          <!-- icons -->
+          <div id="icons" class="hidden md:flex justify-center gap-6 m-6 px-4 py-6 bg-gray-50 rounded-xl shadow-sm">
+            <!-- Feature 1 -->
+            <div class="flex items-center gap-3 text-gray-700 hover:text-indigo-600 transition">
+              <i class="fa-solid fa-code text-xl bg-indigo-100 p-2 rounded-full text-indigo-600"></i>
+              <span class="text-lg font-medium">Code Optimal</span>
+            </div>
+          
+            <!-- Feature 2 -->
+            <div class="flex items-center gap-3 text-gray-700 hover:text-indigo-600 transition">
+              <i class="fa-solid fa-arrow-pointer text-xl bg-indigo-100 p-2 rounded-full text-indigo-600"></i>
+              <span class="text-lg font-medium">Drag & Drop</span>
+            </div>
+          
+            <!-- Feature 3 -->
+            <div class="flex items-center gap-3 text-gray-700 hover:text-indigo-600 transition">
+              <i class="fa-solid fa-laptop-code text-xl bg-indigo-100 p-2 rounded-full text-indigo-600"></i>
+              <span class="text-lg font-medium">Windows, Linux, Mac</span>
+            </div>
+          </div>
+          
+
+
+          <!-- Heading -->
+          <h1 class="font-extrabold text-2xl sm:text-3xl md:text-4xl mt-6 text-gray-800">
+            Web app to Desktop app in minutes
+          </h1>
+      
+          <!-- Description -->
+          <p class="mt-4 text-base sm:text-lg md:text-xl font-medium text-gray-700">
+            Take your web app codebase and transform it into a cross-platform Desktop app with native functionality
+          </p>
+      
+          <!-- Buttons -->
+          <div id="button" class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-6">
+            <button class="border border-blue-800 bg-blue-700 text-white rounded-lg px-5 py-2 text-sm sm:text-base shadow-md 
+                           hover:bg-blue-800 hover:shadow-xl hover:shadow-blue-400 hover:scale-105 
+                           transition-all duration-300 ease-in-out">
+              Download Now
+            </button>
+      
+            <button class="border border-gray-400 text-gray-800 rounded-lg px-5 py-2 text-sm sm:text-base 
+                           hover:bg-gray-100 hover:text-black hover:shadow-md hover:scale-105 
+                           transition-all duration-300 ease-in-out">
+              Read docs
+            </button>
+          </div>
+      
+        </div>
+      </div>
+      <!-- Compaines container -->
+       <div id="compaines-container" class="flex flex-col gap-10">
+        <div id="compaine-title" class="flex justify-center gap-2">
+          <span class="font-semibold">APPS POWERED BY TODESKTOP</span>
+        </div>
+        <div id="lines" class="flex flex-col gap-4">
+          <!-- Line 1 -->
+          <div id="line1" class="flex gap-4 w-screen -translate-x-48 transition-transform ease-linear">
+            
+        
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-server w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Unbounce1</span>
+            </div>
+   
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-database w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Database</span>
+            </div>
+        
+          
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-code w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Code</span>
+            </div>
+
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-server w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Unbounce1</span>
+            </div>
+   
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-database w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Database</span>
+            </div>
+        
+          
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-code w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Code</span>
+            </div>
+
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-server w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Unbounce1</span>
+            </div>
+   
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-database w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Database</span>
+            </div>
+        
+          
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-code w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Code</span>
+            </div>
+
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-server w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Unbounce1</span>
+            </div>
+   
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-database w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Database</span>
+            </div>
+        
+          
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-code w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Code</span>
+            </div>
+        
+          </div>
+
+          <div id="line2" class="flex gap-4 w-screen ">
+            
+        
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-server w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Unbounce1</span>
+            </div>
+   
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-database w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Database</span>
+            </div>
+        
+          
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-code w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Code</span>
+            </div>
+
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-server w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Unbounce1</span>
+            </div>
+   
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-database w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Database</span>
+            </div>
+        
+          
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-code w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Code</span>
+            </div>
+
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-server w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Unbounce1</span>
+            </div>
+   
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-database w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Database</span>
+            </div>
+        
+          
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-code w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Code</span>
+            </div>
+
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-server w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Unbounce1</span>
+            </div>
+   
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-database w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Database</span>
+            </div>
+        
+          
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-code w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Code</span>
+            </div>
+        
+          </div>
+
+          <div id="line3" class="flex gap-4 w-screen -translate-x-48 transition-transform ease-linear">
+            
+        
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-server w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Unbounce1</span>
+            </div>
+   
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-database w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Database</span>
+            </div>
+        
+          
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-code w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Code</span>
+            </div>
+
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-server w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Unbounce1</span>
+            </div>
+   
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-database w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Database</span>
+            </div>
+        
+          
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-code w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Code</span>
+            </div>
+
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-server w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Unbounce1</span>
+            </div>
+   
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-database w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Database</span>
+            </div>
+        
+          
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-code w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Code</span>
+            </div>
+
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-server w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Unbounce1</span>
+            </div>
+   
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-database w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Database</span>
+            </div>
+        
+          
+            <div class="flex flex-col justify-center gap-2 items-center min-w-24 min-h-24 bg-white rounded-xl border border-gray-300 md:min-h-32 md:min-w-32">
+              <i class="fa-solid fa-code w-12 h-12 md:w-16 md:h-16"></i>
+              <span class="text-[12px] font-semibold lg:text-[16px]">Code</span>
+            </div>
+        
+          </div>
+        </div>
+        
+          </div>
+
+        </div>
+
+       </div>
+
+       <div id="bento-grid">
+        
+        <div class="grid grid-cols-5 grid-rows-5 gap-4 p-6 bg-gray-100 rounded-2xl">
+          <!-- Item 1 -->
+          <div class="row-span-3 bg-gradient-to-br from-indigo-500 to-purple-500 text-white rounded-2xl p-6 shadow-lg flex flex-col justify-between">
+            <i class="fa-solid fa-star text-3xl"></i>
+            <h2 class="text-2xl font-bold">Feature One</h2>
+            <p class="text-sm">Detailed info about item 1.</p>
+          </div>
+        
+          <!-- Item 2 -->
+          <div class="col-span-2 row-span-2 col-start-2 row-start-2 bg-gradient-to-br from-pink-500 to-red-400 text-white rounded-2xl p-6 shadow-lg flex flex-col justify-between">
+            <i class="fa-solid fa-heart text-3xl"></i>
+            <h2 class="text-2xl font-bold">Love This</h2>
+            <p class="text-sm">A highlight of what makes this awesome.</p>
+          </div>
+        
+          <!-- Item 3 -->
+          <div class="col-span-3 row-span-2 col-start-1 row-start-4 bg-gradient-to-br from-green-400 to-emerald-500 text-white rounded-2xl p-6 shadow-lg flex flex-col justify-between">
+            <i class="fa-solid fa-leaf text-3xl"></i>
+            <h2 class="text-2xl font-bold">Green Power</h2>
+            <p class="text-sm">Sustainability focus goes here.</p>
+          </div>
+        
+          <!-- Item 4 -->
+          <div class="col-span-2 row-span-3 col-start-4 row-start-3 bg-gradient-to-br from-yellow-400 to-orange-500 text-white rounded-2xl p-6 shadow-lg flex flex-col justify-between">
+            <i class="fa-solid fa-sun text-3xl"></i>
+            <h2 class="text-2xl font-bold">Shine Bright</h2>
+            <p class="text-sm">Energy or optimism piece here.</p>
+          </div>
+        
+          <!-- Item 5 -->
+          <div class="col-span-2 col-start-2 row-start-1 bg-gradient-to-br from-blue-400 to-cyan-500 text-white rounded-2xl p-6 shadow-lg flex flex-col justify-between">
+            <i class="fa-solid fa-water text-3xl"></i>
+            <h2 class="text-2xl font-bold">Fluid Ideas</h2>
+            <p class="text-sm">Cool ideas that flow effortlessly.</p>
+          </div>
+        
+          <!-- Item 6 -->
+          <div class="col-span-2 row-span-2 col-start-4 row-start-1 bg-gradient-to-br from-teal-400 to-blue-600 text-white rounded-2xl p-6 shadow-lg flex flex-col justify-between">
+            <i class="fa-solid fa-code text-3xl"></i>
+            <h2 class="text-2xl font-bold">Code Magic</h2>
+            <p class="text-sm">Power of development & technology.</p>
+          </div>
+        </div>
+        
+       </div>
+
+       <!-- FAQ section  -->
+       <div id="faq" class="container mx-auto px-4 py-12">
+        <h2 class="text-4xl font-bold text-center mb-10 text-gray-800">Frequently Asked Questions</h2>
+      
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- FAQ Item -->
+          <div class="group rounded-xl border border-gray-300 bg-white p-6 shadow-md transition hover:shadow-xl">
+            <dt class="cursor-pointer flex justify-between items-center faq-toggle" aria-controls="faq-1">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-desktop text-indigo-600 text-xl"></i>
+                <p class="font-semibold text-lg text-gray-800">What is ToDesktop?</p>
+              </div>
+              <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300 group-[.open]:rotate-180"></i>
+            </dt>
+            <dd id="faq-1" class="hidden text-gray-600 text-base mt-4">
+              <p>ToDesktop helps you convert your web application into a native desktop app with zero hassle. Perfect for Electron-based distribution without the pain.</p>
+            </dd>
+          </div>
+      
+          <!-- FAQ Item -->
+          <div class="group rounded-xl border border-gray-300 bg-white p-6 shadow-md transition hover:shadow-xl">
+            <dt class="cursor-pointer flex justify-between items-center faq-toggle" aria-controls="faq-2">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-download text-green-600 text-xl"></i>
+                <p class="font-semibold text-lg text-gray-800">How do I distribute my app?</p>
+              </div>
+              <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300 group-[.open]:rotate-180"></i>
+            </dt>
+            <dd id="faq-2" class="hidden text-gray-600 text-base mt-4">
+              <p>You can easily distribute your desktop app using auto-updates, version control, and platform-specific builds (macOS, Windows, Linux) managed by ToDesktop.</p>
+            </dd>
+          </div>
+      
+          <!-- FAQ Item -->
+          <div class="group rounded-xl border border-gray-300 bg-white p-6 shadow-md transition hover:shadow-xl">
+            <dt class="cursor-pointer flex justify-between items-center faq-toggle" aria-controls="faq-3">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-code text-blue-600 text-xl"></i>
+                <p class="font-semibold text-lg text-gray-800">Do I need coding experience?</p>
+              </div>
+              <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300 group-[.open]:rotate-180"></i>
+            </dt>
+            <dd id="faq-3" class="hidden text-gray-600 text-base mt-4">
+              <p>Nope! ToDesktop handles the tech side for you. Just drop in your web URL and configure your settings visually.</p>
+            </dd>
+          </div>
+      
+          <!-- FAQ Item -->
+          <div class="group rounded-xl border border-gray-300 bg-white p-6 shadow-md transition hover:shadow-xl">
+            <dt class="cursor-pointer flex justify-between items-center faq-toggle" aria-controls="faq-4">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-shield-halved text-red-600 text-xl"></i>
+                <p class="font-semibold text-lg text-gray-800">Is it secure?</p>
+              </div>
+              <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300 group-[.open]:rotate-180"></i>
+            </dt>
+            <dd id="faq-4" class="hidden text-gray-600 text-base mt-4">
+              <p>Absolutely. ToDesktop wraps your web app in a secure Electron shell with automatic updates and code signing built-in.</p>
+            </dd>
+          </div>
+      
+          <!-- FAQ Item -->
+          <div class="group rounded-xl border border-gray-300 bg-white p-6 shadow-md transition hover:shadow-xl">
+            <dt class="cursor-pointer flex justify-between items-center faq-toggle" aria-controls="faq-5">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-coins text-yellow-500 text-xl"></i>
+                <p class="font-semibold text-lg text-gray-800">How much does it cost?</p>
+              </div>
+              <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300 group-[.open]:rotate-180"></i>
+            </dt>
+            <dd id="faq-5" class="hidden text-gray-600 text-base mt-4">
+              <p>There are multiple pricing tiers based on your needs—from indie developers to large teams. Visit the pricing page on ToDesktop for more.</p>
+            </dd>
+          </div>
+      
+          <!-- FAQ Item -->
+          <div class="group rounded-xl border border-gray-300 bg-white p-6 shadow-md transition hover:shadow-xl">
+            <dt class="cursor-pointer flex justify-between items-center faq-toggle" aria-controls="faq-6">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-life-ring text-purple-600 text-xl"></i>
+                <p class="font-semibold text-lg text-gray-800">What about support?</p>
+              </div>
+              <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300 group-[.open]:rotate-180"></i>
+            </dt>
+            <dd id="faq-6" class="hidden text-gray-600 text-base mt-4">
+              <p>You'll get priority support on paid plans including onboarding assistance, troubleshooting, and updates help.</p>
+            </dd>
+          </div>
+        </div>
+      </div>
+      
+    </main>
+
+    <footer class="container mx-auto px-4 py-12">
+      <div class="rounded-2xl border border-gray-200 bg-gray-50 flex flex-col lg:flex-row lg:items-center justify-between px-8 py-10 gap-6 shadow-sm">
+        
+        <!-- Documentation Link -->
+        <a href="#" class="text-sm text-gray-700 hover:text-indigo-600 transition font-medium">
+          <i class="fa-solid fa-book mr-2 text-indigo-500"></i>Documentation
+        </a>
+    
+        <!-- Social Icons -->
+        <div class="flex gap-6 text-lg">
+          <a href="#" class="text-gray-600 hover:text-sky-500 transition">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+          <a href="#" class="text-gray-600 hover:text-gray-900 transition">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="#" class="text-gray-600 hover:text-pink-600 transition">
+            <i class="fa-brands fa-dribbble"></i>
+          </a>
+          <a href="#" class="text-gray-600 hover:text-blue-700 transition">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </div>
+    
+        <!-- Branding -->
+        <a href="#" id="brand" class="flex gap-2 items-center flex-1">
+          <i class="fa-solid fa-desktop text-indigo-600 text-xl"></i>
+          <span class="text-lg font-semibold text-gray-800">ToDesktop</span>
+        </a>
+      </div>
+    
+      <!-- Sub-footer -->
+      <div id="sub-footer" class="flex flex-col items-center gap-4 mt-10 text-center">
+        <div class="flex items-center gap-2 text-sm text-gray-600">
+          <i class="fa-solid fa-seedling text-green-500"></i>
+          <p>A <strong>Y Combinator</strong> company</p>
+        </div>
+        <p class="text-sm text-gray-400">© 2024 ToDesktop, Inc. All rights reserved.</p>
+      </div>
+    </footer>
+    
+<script src="function.js"></script>
+</body>
+</html>

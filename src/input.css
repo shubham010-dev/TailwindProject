@@ -1,0 +1,4 @@
+@import "tailwindcss";
+#line1, #line2, #line3 {
+    will-change: transform;
+  }

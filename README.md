@@ -1,6 +1,7 @@
-# Personal Portfolio Website (Tailwind CSS)
+# Modern Portfolio Website (Tailwind CSS)
 
-This project is a modern and responsive portfolio website built using HTML and Tailwind CSS. It is designed to showcase personal skills, projects, and contact information in a clean and elegant layout.
+This is a modern responsive portfolio-style landing page built using HTML and Tailwind CSS.
+It showcases product features, animated components, and an FAQ section designed for converting web apps to desktop apps.
 
 ## Features
 

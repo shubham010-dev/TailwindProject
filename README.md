@@ -17,7 +17,6 @@ It showcases product features, animated components, and an FAQ section designed 
 ## File Structure
 ```
 .
-├── index.html             # Main HTML structure
 ├── tailwind.config.js     # Tailwind CSS config
 ├── vite.config.js         # Vite dev/build config
 ├── package.json           # Project metadata and scripts
